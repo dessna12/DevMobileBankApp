@@ -31,7 +31,6 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
         // context.pushNamed(context, '/transfer');
         break;
       case 4:
-        debugPrint('here I am');	
         context.pushNamed(SettingsPage.name);
         break;
     }
