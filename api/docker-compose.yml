@@ -5,7 +5,7 @@ services:
         image: bitnami/laravel:latest
         restart: on-failure
         ports:
-            - "8000:8000"
+            - "8001:8000"
         env_file:
             - ./.env
         volumes:
@@ -18,7 +18,7 @@ services:
     mysql:
         image: mysql:latest
         ports:
-            - "3306:3306"
+            - "3307:3306"
         env_file:
             - ./.env
         volumes:

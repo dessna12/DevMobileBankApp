@@ -2,7 +2,6 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:bankenstein/presentation/components/app_bar.dart';
 import 'package:bankenstein/presentation/components/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:sliding_switch/sliding_switch.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
