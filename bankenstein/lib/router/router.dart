@@ -3,6 +3,7 @@
 import 'package:bankenstein/bloc/authentication_cubit.dart';
 import 'package:bankenstein/presentation/pages/home_page.dart';
 import 'package:bankenstein/presentation/pages/login_page.dart';
+import 'package:bankenstein/presentation/pages/profile_page.dart';
 import 'package:bankenstein/presentation/pages/settings_page.dart';
 import 'package:bankenstein/presentation/pages/wallet_page.dart';
 import 'package:bankenstein/router/go_route_refresh_stream.dart';
@@ -14,6 +15,8 @@ import 'package:flutter/widgets.dart';
 const _login = '/login';
 const _homePage = '/home';
 const _settings = '/settings';
+const _wallet = '/wallet';
+const _profile='/profile';
 
 
 abstract class AppRouter {
@@ -61,7 +64,14 @@ abstract class AppRouter {
           ),
           GoRoute(
             name: WalletPage.name,
-            path: _settings,
+            path: _wallet,
+            builder: (context, state) {
+              return const WalletPage();
+            },
+          ),
+          GoRoute(
+            name: ProfilePage.name,
+            path: _profile,
             builder: (context, state) {
               return const WalletPage();
             },
