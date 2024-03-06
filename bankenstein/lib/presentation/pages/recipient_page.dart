@@ -11,20 +11,16 @@ class RecipientPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AuthenticationCubit, AuthenticationState>(
-    builder: (context, state) {
-      if (state is AuthenticationStateAuthenticated) { 
+        builder: (context, state) {
+      if (state is AuthenticationStateAuthenticated) {
         return Scaffold(
           appBar: MyAppBar(pageName: RecipientPage.name, user: state.user),
-          body: Padding(
-            padding: ,
-            child: 
-            )
-      );
+          body: Placeholder(),
+        );
       } else {
         // Aucun utilisateur connecté
         return const CircularProgressIndicator();
       }
-    }
-    );
+    });
   }
 }

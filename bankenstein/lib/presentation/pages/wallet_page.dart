@@ -6,25 +6,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class WalletPage extends StatelessWidget {
   const WalletPage({super.key});
 
-  static const name = 'Wallet';
+  static const name = 'Accounts';
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AuthenticationCubit, AuthenticationState>(
-    builder: (context, state) {
-      if (state is AuthenticationStateAuthenticated) { 
+        builder: (context, state) {
+      if (state is AuthenticationStateAuthenticated) {
         return Scaffold(
           appBar: MyAppBar(pageName: WalletPage.name, user: state.user),
-          body: Padding(
-            padding: ,
-            child: 
-            )
-      );
+          body: Placeholder(),
+        );
       } else {
         // Aucun utilisateur connecté
         return const CircularProgressIndicator();
       }
-    }
-    );
+    });
   }
 }
