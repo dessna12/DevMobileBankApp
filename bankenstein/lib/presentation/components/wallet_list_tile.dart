@@ -16,7 +16,7 @@ class WalletListTile extends StatelessWidget {
             wallet.name ?? 'No Name',
           ),
           trailing: Text(
-            "${wallet.balance}",
+            "${wallet.balance} €",
           ),
         ),
       );
