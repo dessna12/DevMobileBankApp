@@ -4,6 +4,7 @@ import 'package:bankenstein/bloc/authentication_cubit.dart';
 import 'package:bankenstein/presentation/pages/home_page.dart';
 import 'package:bankenstein/presentation/pages/login_page.dart';
 import 'package:bankenstein/presentation/pages/settings_page.dart';
+import 'package:bankenstein/presentation/pages/wallet_page.dart';
 import 'package:bankenstein/router/go_route_refresh_stream.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,7 +29,6 @@ abstract class AppRouter {
 
           if (currentState is AuthenticationStateAuthenticated &&
               currentRoute == _login) {
-            debugPrint('Je passe à la homepage');
             return _homePage;
           } else if (!_publicRoutes.contains(currentRoute) &&
               currentState is AuthenticationStateInitial) {
@@ -57,6 +57,13 @@ abstract class AppRouter {
             path: _settings,
             builder: (context, state) {
               return const SettingsPage();
+            },
+          ),
+          GoRoute(
+            name: WalletPage.name,
+            path: _settings,
+            builder: (context, state) {
+              return const WalletPage();
             },
           )
     ],

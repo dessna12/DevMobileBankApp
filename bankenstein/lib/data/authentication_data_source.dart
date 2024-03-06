@@ -31,7 +31,6 @@ abstract class AuthenticationDataSource {
         debugPrint('il y a une erreur $errorString');
           Map<String, dynamic> errorJson = {
             'error': error.toString()};
-        
         return errorJson;
     }
 

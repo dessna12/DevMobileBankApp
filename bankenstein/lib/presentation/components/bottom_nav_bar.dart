@@ -1,5 +1,6 @@
 import 'package:bankenstein/presentation/pages/home_page.dart';
 import 'package:bankenstein/presentation/pages/settings_page.dart';
+import 'package:bankenstein/presentation/pages/wallet_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -22,7 +23,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
         context.pushNamed(HomePage.name);
         break;
       case 1:
-        // context.pushNamed(context, '/wallet');
+        context.pushNamed(WalletPage.name);
         break;
       case 2:
         // context.pushNamed(context, '/profile');

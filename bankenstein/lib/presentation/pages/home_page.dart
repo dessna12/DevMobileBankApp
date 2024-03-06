@@ -16,23 +16,24 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   bool _isDarkMode = false;
 
-  void _toggleDarkMode() {
-    setState(() {
-      _isDarkMode = !_isDarkMode;
-    });
-  }
+  // void _toggleDarkMode() {
+  //   setState(() {
+  //     _isDarkMode = !_isDarkMode;
+  //   });
+  // }
   
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const MyAppBar(pageName: HomePage.name,),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Center(
-          child: BlocBuilder<AuthenticationCubit, AuthenticationState>(
-            builder: (context, state) {
-              if (state is AuthenticationStateAuthenticated) {
-                return Column(
+    return BlocBuilder<AuthenticationCubit, AuthenticationState>(
+      builder: (context, state) {
+      if (state is AuthenticationStateAuthenticated) { 
+        return Scaffold(
+          appBar: MyAppBar(pageName: HomePage.name, user: state.user),
+          body: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Center(
+              child:
+                Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
@@ -50,15 +51,16 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ],
-                );
-              }
-              // Return a default widget if the state is not AuthenticationStateAuthenticated
-              return const CircularProgressIndicator(); // Example of a default widget
-            },
+                )
+            ),
           ),
-        ),
-      ),
-      bottomNavigationBar: MyBottomNavBar(),
-      );
+          bottomNavigationBar: MyBottomNavBar(),
+        );
+        } else {
+            // Aucun utilisateur connecté
+            return const CircularProgressIndicator();
+        }
+      },
+    );
   }
 }

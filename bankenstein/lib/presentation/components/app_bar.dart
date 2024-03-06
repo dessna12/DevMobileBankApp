@@ -1,13 +1,15 @@
+import 'package:bankenstein/models/user.dart';
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({
     super.key,
-    required this.pageName 
+    required this.pageName,
+    required this.user,
     });
 
   final String pageName;
-
+  final UserModel user;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -20,17 +22,17 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 )
               ), 
               const Spacer(), 
-              const Row(
+              Row(
                 children: [
                   Text(
-                    'Alexis Vanderpitte',
-                    style: TextStyle(
+                    user.name,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 15,
                     )                    
                   ), // User's name
-                  SizedBox(width: 8), // Space between username and icon
-                  Icon(
+                  const SizedBox(width: 8), // Space between username and icon
+                  const Icon(
                     Icons.account_circle,
                     color: Colors.white
                     ), // Account icon
