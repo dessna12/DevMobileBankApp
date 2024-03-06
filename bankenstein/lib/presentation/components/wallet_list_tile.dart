@@ -11,12 +11,18 @@ class WalletListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Card(
-        child: ListTile(
-          title: Text(
-            wallet.name ?? 'No Name',
-          ),
-          trailing: Text(
-            "${wallet.balance} €",
+        child: GestureDetector(
+          onTap: () {
+            // Ajoutez ici le code à exécuter lors du clic sur la carte
+            print('+1');
+          },
+          child: ListTile(
+            title: Text(
+              wallet.name ?? 'No Name',
+            ),
+            trailing: Text(
+              "${wallet.balance} €",
+            ),
           ),
         ),
       );
