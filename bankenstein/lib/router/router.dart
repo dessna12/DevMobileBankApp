@@ -3,7 +3,7 @@
 import 'package:bankenstein/bloc/authentication_cubit.dart';
 import 'package:bankenstein/presentation/pages/home_page.dart';
 import 'package:bankenstein/presentation/pages/login_page.dart';
-import 'package:bankenstein/presentation/pages/profile_page.dart';
+import 'package:bankenstein/presentation/pages/recipient_page.dart';
 import 'package:bankenstein/presentation/pages/settings_page.dart';
 import 'package:bankenstein/presentation/pages/wallet_page.dart';
 import 'package:bankenstein/router/go_route_refresh_stream.dart';
@@ -70,10 +70,10 @@ abstract class AppRouter {
             },
           ),
           GoRoute(
-            name: ProfilePage.name,
+            name: RecipientPage.name,
             path: _profile,
             builder: (context, state) {
-              return const WalletPage();
+              return const RecipientPage();
             },
           )
     ],
