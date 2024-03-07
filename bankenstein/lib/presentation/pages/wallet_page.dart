@@ -15,10 +15,6 @@ class WalletPage extends StatelessWidget {
       if (state is AuthenticationStateAuthenticated) { 
         return Scaffold(
           appBar: MyAppBar(pageName: WalletPage.name, user: state.user),
-          body: Padding(
-            padding: ,
-            child: 
-            )
       );
       } else {
         // Aucun utilisateur connecté
